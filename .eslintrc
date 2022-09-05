@@ -9,7 +9,7 @@
   },
 
   "rules": {
-    "no-new": "off",
+    "no-new": "on",
     "no-console": "off",
     "no-param-reassign": "off",
     "no-alert": "off",

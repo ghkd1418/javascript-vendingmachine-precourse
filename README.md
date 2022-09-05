@@ -13,6 +13,30 @@
 
 **화면에 랜더링**
 
+- 탭 메뉴 버튼 만들기
+
+  - [x] 상품관리 탭 버튼 id는 `product-purchase-menu` 랜더링
+  - [x] 잔돈충전 탭 버튼 id는 `vending-machine-manage-menu` 랜더링 - [ ] 상품구매 탭 버튼 id는 `product-add-menu` 랜더링
+
+    - 상품 추가 입력 폼의 상품명 입력 요소의 id는 `product-name-input`이다.
+    - 상품 추가 입력 폼의 상품 가격 입력 요소의 id는 `product-price-input`이다.
+    - 상품 추가 입력 폼의 수량 입력 요소의 id는 `product-quantity-input`이다.
+
+    - 상품 `추가하기` 버튼 요소의 id는 `product-add-button`이다.
+
+    - 추가한 각 상품 요소의 class명은 `product-manage-item`이며, 하위에 아래 요소들을 갖는다.
+    - 상품명에 해당하는 요소의 class명은 `roduct-manage-item`이다.
+    - 가격에 해당하는 요소의 class명은 `product-manage-price`이다.
+    - 수량에 해당하는 요소의 class명은 `product-manage-quantity`이다.
+
+**상품관리 탭 구현**
+
+- [x] 상품관리 탭 랜더링
+- [x] 상품명, 가격, 수량을 입력받는다.
+  - [x] 빈칸이면 alert
+- [ ] 입력받은 데이터를 객체화 한다.
+- [ ] 가공된 데이터를 표 형태로 화면에 출력한다.
+
 ## 🎯 기능 요구 사항
 
 반환되는 동전이 최소한이 되는 자판기를 구현한다.
@@ -197,16 +221,5 @@
 
 ```bash
 // {폴더 경로}/javascript-vendingmachine-precourse/ 에서
-npm install
-```
-
-- 설치가 완료되었다면, 다음 명령어를 입력해 테스트를 실행한다.
-
-```bash
-// {폴더 경로}/javascript-vendingmachine-precourse/ 에서
 npm run test
 ```
-
-- 아래와 같은 화면이 나오며 모든 테스트가 pass한다면 성공!
-
-![테스트 결과](./images/test_result.png)
