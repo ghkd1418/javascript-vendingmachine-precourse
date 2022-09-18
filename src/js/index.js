@@ -1,4 +1,4 @@
-import handleAddProduct from './controllers/handleAddProduct.js';
+import HandleAddProduct from './controllers/handleAddProduct.js';
 import $ from './utils/dom.js';
 import { renderNavbar, renderAddProduct } from './views/renderInitHTML.js';
 

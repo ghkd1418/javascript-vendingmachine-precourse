@@ -16,7 +16,7 @@ export default function HandleAddProduct() {
   };
   const isProductPriceValid = inputPrice => {
     if (inputPrice === '') {
-      alertInput(ERROR.INPUT_BLANK);
+      alertInput(ERROR.PRICE_BLANK);
       return false;
     }
     if (inputPrice < 100) {
@@ -31,7 +31,7 @@ export default function HandleAddProduct() {
   };
   const isProductQuantityValid = inputquantity => {
     if (inputquantity === '') {
-      alertInput(ERROR.INPUT_BLANK);
+      alertInput(ERROR.QUANTITY_BLANK);
       return false;
     }
     if (inputquantity < 1) {
