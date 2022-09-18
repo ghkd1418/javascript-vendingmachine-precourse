@@ -4,10 +4,12 @@ import renderProductList from '../views/renderProductList.js';
 import alertInput from '../views/alert.js';
 import { ERROR } from '../utils/constant.js';
 
-const handleAddProduct = () => {
+export default function HandleAddProduct() {
+  this.init = () => {};
+
   const isProductNameValid = inputName => {
     if (inputName === '') {
-      alertInput(ERROR.INPUT_BLANK);
+      alertInput(ERROR.NAME_BLANK);
       return false;
     }
     return true;
@@ -17,11 +19,23 @@ const handleAddProduct = () => {
       alertInput(ERROR.INPUT_BLANK);
       return false;
     }
+    if (inputPrice < 100) {
+      alertInput(ERROR.PRICE_TOO_LOW);
+      return false;
+    }
+    if (inputPrice % 10 !== 0) {
+      alertInput(ERROR.PRICE_SHOULD_DIVIED_TEN);
+      return false;
+    }
     return true;
   };
   const isProductQuantityValid = inputquantity => {
     if (inputquantity === '') {
       alertInput(ERROR.INPUT_BLANK);
+      return false;
+    }
+    if (inputquantity < 1) {
+      alertInput(ERROR.QUANTITY_TOO_LOW);
       return false;
     }
     return true;
@@ -40,6 +54,5 @@ const handleAddProduct = () => {
       renderProductList();
     }
   });
-};
-
-export default handleAddProduct;
+  this.init();
+}

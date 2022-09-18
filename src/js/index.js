@@ -10,7 +10,8 @@ function VendingMachine() {
   $('#app').addEventListener('click', e => {
     if (e.target.id === 'product-purchase-menu') {
       renderAddProduct();
-      handleAddProduct();
+      new HandleAddProduct();
+      return;
     }
   });
 }
