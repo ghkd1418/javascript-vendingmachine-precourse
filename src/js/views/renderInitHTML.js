@@ -24,9 +24,15 @@ export const renderAddProduct = () => {
   </form>
   <h2>상품 현황</h2>
   <table border = "1" class = "product-manage-item">
-    <th class="product-manage-name">상품명</th>
-    <th class="product-manage-item">가격</th>
-    <th class="product-manage-quantity">수량</th>
+    <thead>
+      <tr>
+        <th>상품명</th>
+        <th>가격</th>
+        <th>수량</th>
+      </tr>
+    </thead>
+    <tbody>
+    </tbody>
   </table>`;
 };
 

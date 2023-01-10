@@ -1,11 +1,14 @@
 import $ from '../utils/dom.js';
 import renderProductList from '../views/renderProductList.js';
-// import Product from '../models/Product.js';
+import Product from '../models/Product.js';
 import alertInput from '../views/alert.js';
 import { ERROR } from '../utils/constant.js';
+import store from '../utils/store.js';
 
 export default function HandleAddProduct() {
   this.init = () => {};
+  this.product = [];
+  console.log(this.product);
 
   const isProductNameValid = inputName => {
     if (inputName === '') {
@@ -47,10 +50,9 @@ export default function HandleAddProduct() {
     const inputName = $('#product-name-input').value;
     const inputPrice = $('#product-price-input').value;
     const inputquantity = $('#product-quantity-input').value;
-
     if (isProductNameValid(inputName) && isProductPriceValid(inputPrice) && isProductQuantityValid(inputquantity)) {
-      // Product();
-      console.log('통과');
+      this.product.push(new Product(inputName, inputPrice, inputquantity));
+      store.setLocalStorage(this.product);
       renderProductList();
     }
   });
