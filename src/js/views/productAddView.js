@@ -1,9 +1,9 @@
 import $ from '../utils/dom.js';
 import store from '../utils/store.js';
 
-const renderProductList = () => {
-  let productList = store.getLocalStorage('product');
-  const templete = productList
+export const renderProductList = () => {
+  const templete = store
+    .getLocalStorage('product')
     .map(product => {
       return `<tr class="product-manage-item">
       <td class="product-manage-name">${product.name}</td>
@@ -16,4 +16,6 @@ const renderProductList = () => {
   $('tbody').innerHTML = templete;
 };
 
-export default renderProductList;
+export const resetProductAddForm = () => {
+  $('#product-add-form').reset();
+};

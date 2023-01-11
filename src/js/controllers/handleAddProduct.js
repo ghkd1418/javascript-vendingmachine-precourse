@@ -1,5 +1,5 @@
 import $ from '../utils/dom.js';
-import renderProductList from '../views/renderProductList.js';
+import { renderProductList, resetProductAddForm } from '../views/productAddView.js';
 import Product from '../models/Product.js';
 import alertInput from '../views/alert.js';
 import { ERROR } from '../utils/constant.js';
@@ -8,7 +8,6 @@ import store from '../utils/store.js';
 export default function HandleAddProduct() {
   this.init = () => {};
   this.product = [];
-  console.log(this.product);
 
   const isProductNameValid = inputName => {
     if (inputName === '') {
@@ -54,6 +53,7 @@ export default function HandleAddProduct() {
       this.product.push(new Product(inputName, inputPrice, inputquantity));
       store.setLocalStorage(this.product);
       renderProductList();
+      resetProductAddForm();
     }
   });
   this.init();
