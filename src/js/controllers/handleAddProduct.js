@@ -6,8 +6,13 @@ import { ERROR } from '../utils/constant.js';
 import store from '../utils/store.js';
 
 export default function HandleAddProduct() {
-  this.init = () => {};
-  this.product = [];
+  this.products = []; // 이거떄문에 초기화됨 ...
+  this.init = () => {
+    if (store.getLocalStorage('product')) {
+      this.products = store.getLocalStorage('product');
+      renderProductList();
+    }
+  };
 
   const isProductNameValid = inputName => {
     if (inputName === '') {
@@ -50,8 +55,8 @@ export default function HandleAddProduct() {
     const inputPrice = $('#product-price-input').value;
     const inputquantity = $('#product-quantity-input').value;
     if (isProductNameValid(inputName) && isProductPriceValid(inputPrice) && isProductQuantityValid(inputquantity)) {
-      this.product.push(new Product(inputName, inputPrice, inputquantity));
-      store.setLocalStorage(this.product);
+      this.products.push(new Product(inputName, inputPrice, inputquantity));
+      store.setLocalStorage(this.products);
       renderProductList();
       resetProductAddForm();
     }
