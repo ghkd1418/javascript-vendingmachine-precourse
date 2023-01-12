@@ -6,7 +6,7 @@ import { ERROR } from '../utils/constant.js';
 import store from '../utils/store.js';
 
 export default function HandleAddProduct() {
-  this.products = []; // 이거떄문에 초기화됨 ...
+  this.products = [];
   this.init = () => {
     if (store.getLocalStorage('product')) {
       this.products = store.getLocalStorage('product');
